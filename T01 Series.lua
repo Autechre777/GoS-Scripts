@@ -8220,6 +8220,7 @@ end
 
 function Harass()
 	if Mode() == "Harass" then
+			IOW.attacksEnabled = true
 		if ViktorMenu.Harass.UseQ:Value() then
 			if 100*GetCurrentMana(myHero)/GetMaxMana(myHero) > ViktorMenu.Harass.MP:Value() then
 				if CanUseSpell(myHero,_Q) == READY then
@@ -8254,6 +8255,7 @@ end
 
 function LastHit()
 	if Mode() == "LaneClear" then
+			IOW.attacksEnabled = true
 		for _, minion in pairs(minionManager.objects) do
 			if GetTeam(minion) == MINION_ENEMY then
 				if ValidTarget(minion, ViktorQ.range) then
@@ -8278,6 +8280,7 @@ end
 
 function LaneClear()
 	if Mode() == "LaneClear" then
+			IOW.attacksEnabled = true
 		if ViktorMenu.LaneClear.UseE:Value() then
 			if 100*GetCurrentMana(myHero)/GetMaxMana(myHero) > ViktorMenu.LaneClear.MP:Value() then
 				if CanUseSpell(myHero,_E) == READY then
