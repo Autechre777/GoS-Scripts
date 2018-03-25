@@ -7986,6 +7986,18 @@ OnDraw(function(myHero)
 	end
 end)
 
+OnUpdateBuff(function(unit,buff)
+	if unit == myHero and buff.Name == "ViktorPowerTransferReturn" then
+		IOW.attacksEnabled = true
+	end
+end)
+
+OnRemoveBuff(function(unit,buff)
+	if unit == myHero and buff.Name == "ViktorPowerTransferReturn" then
+		IOW.attacksEnabled = false
+	end
+	end)
+
 OnTick(function(myHero)
 	target = GetCurrentTarget()
 		Auto()
